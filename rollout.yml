@@ -15,6 +15,7 @@ spec:
       containers:
       - name: blue-green
         image: krzysiek979/blue-green:latest
+        # Ja robię pulla z docker huba więc poniższe zakomentowane
         #imagePullPolicy: Never
         env:
         - name: html_name
@@ -23,6 +24,7 @@ spec:
         - containerPort: 5000
   strategy:
     blueGreen: 
+    # Naz serwisów z poniżej. Mamy ative i preview w metodologi blue green
       activeService: rollout-bluegreen-active
       previewService: rollout-bluegreen-preview
       autoPromotionEnabled: false
